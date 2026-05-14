@@ -88,6 +88,14 @@ This repository is now configured to deploy the frontend as a fully working demo
 ### Use the backend instead
 If you want the app to connect to the Laravel API instead of mock mode, deploy the backend to a free PHP host or Platform-as-a-Service and set `REACT_APP_API_BASE_URL` to the deployed API URL.
 
+### Vercel backend connection
+To switch the Vercel deployment from mock mode to your real backend:
+1. In the Vercel project dashboard, add `REACT_APP_USE_MOCK_API=false`.
+2. Add `REACT_APP_API_BASE_URL=https://your-backend-host.com/api`.
+3. Trigger a new Vercel deployment.
+
+If you don’t set these values, the app will continue to use the browser mock API.
+
 ### Demo credentials
 - Admin user: `admin@shopsphere.com` / `admin123`
 - Demo user: `demo@shopsphere.com` / `password`

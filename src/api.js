@@ -1,7 +1,7 @@
 import { mockCategories, mockProducts, mockPromotions, mockSettings, mockUsers } from './mockData';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8000/api';
-const USE_MOCK_API = process.env.REACT_APP_USE_MOCK_API === 'true';
+const USE_MOCK_API = process.env.REACT_APP_USE_MOCK_API !== 'false';
 
 export const getAuthToken = () => localStorage.getItem('auth_token');
 
