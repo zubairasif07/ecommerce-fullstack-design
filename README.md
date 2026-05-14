@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Free deployment
+
+This repository is now configured to deploy the frontend as a fully working demo site on GitHub Pages without requiring the Laravel backend.
+
+### What changed
+- Added a mock-data API layer in `src/api.js` and `src/mockData.js`
+- Added `REACT_APP_USE_MOCK_API=true` support so the app can run completely in the browser
+- Added a GitHub Actions workflow at `.github/workflows/deploy.yml` to build and deploy to GitHub Pages
+- Added `.env.example` with the frontend API settings and mock mode guidance
+- Set `homepage` to `.` in `package.json` so asset paths work on GitHub Pages
+
+### Deploy on GitHub Pages
+1. Push your branch to `main`.
+2. Ensure GitHub Pages is enabled for the repository and points to the `gh-pages` branch.
+3. The workflow will automatically build the app with mock data and publish `./build`.
+
+### Use the backend instead
+If you want the app to connect to the Laravel API instead of mock mode, deploy the backend to a free PHP host or Platform-as-a-Service and set `REACT_APP_API_BASE_URL` to the deployed API URL.
+
+### Demo credentials
+- Admin user: `admin@shopsphere.com` / `admin123`
+- Demo user: `demo@shopsphere.com` / `password`

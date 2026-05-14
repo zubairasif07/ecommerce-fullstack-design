@@ -10,6 +10,7 @@ const Checkout = ({ cartItems, onNavigate, searchQuery, onSearchChange, onClearC
   const [customer, setCustomer] = useState({
     first_name: '', last_name: '', phone: '', street: '', city: '', state: '', zip: ''
   });
+  // eslint-disable-next-line no-unused-vars
   const [paymentMethod, setPaymentMethod] = useState('cod');
 
   const subtotal = cartItems.reduce((sum, item) => sum + parseFloat(item.price), 0);
@@ -51,6 +52,7 @@ const Checkout = ({ cartItems, onNavigate, searchQuery, onSearchChange, onClearC
       });
       const formattedItems = Object.values(itemsMap);
 
+      // eslint-disable-next-line no-unused-vars
       const order = await api.createOrder(formattedItems, appliedPromo?.code, customer, paymentMethod, null);
       
       alert('Order Placed Successfully!');
